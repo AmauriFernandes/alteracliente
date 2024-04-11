@@ -1,12 +1,22 @@
 package br.com.treinamento.alteracliente.model;
 
+import br.com.treinamento.alteracliente.dto.EnderecoDTO;
+import org.modelmapper.ModelMapper;
+import org.springframework.ui.ModelMap;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Cliente {
+    @Id
     private int id;
     private String nome;
     private String email;
     private String telefone;
     private String cpf;
     private String dataNascimento;
+    private Endereco endereco;
+    private ModelMapper modelMapper = new ModelMapper();
 
     //    getter/setter id
     public int getId() { return id; }
@@ -31,4 +41,12 @@ public class Cliente {
     // getter/setter dataNascimento
     public String getDataNascimento() { return dataNascimento; }
     public void setDataNascimento(String dataNascimento) { this.dataNascimento = dataNascimento; }
+
+    // getter/setter endereco
+    public Endereco getEndereco() { return endereco; }
+    public void setEndereco(EnderecoDTO enderecoDTO) {
+        Endereco novoEndereco = modelMapper.map(enderecoDTO, Endereco.class);
+        this.endereco = novoEndereco;
+    }
+
 }

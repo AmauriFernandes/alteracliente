@@ -1,6 +1,11 @@
 package br.com.treinamento.alteracliente.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Endereco {
+    @Id
     private int id;
     private String logradouro;
     private String numerologradouro;

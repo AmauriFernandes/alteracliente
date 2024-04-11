@@ -7,6 +7,7 @@ public class ClienteDTO {
     private String telefone;
     private String cpf;
     private String dataNascimento;
+    private EnderecoDTO enderecoDTO;
 
     //    getter/setter id
     public int getId() { return id; }
@@ -31,5 +32,10 @@ public class ClienteDTO {
     // getter/setter dataNascimento
     public String getDataNascimento() { return dataNascimento; }
     public void setDataNascimento(String dataNascimento) { this.dataNascimento = dataNascimento; }
+
+    //   getter/setter enderecoDTO
+    public EnderecoDTO getEnderecoDTO() { return enderecoDTO; }
+    public void setEndereco(EnderecoDTO enderecoDTO) { this.enderecoDTO = enderecoDTO; }
+
 
 }
